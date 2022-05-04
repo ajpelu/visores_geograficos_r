@@ -212,15 +212,23 @@ projection(sn)
 
 [1] "+proj=longlat +datum=WGS84 +no_defs"
 
+
 ---
-### Sobre que base 
-Los servicios WMS 
+
+class: middle, center
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:5em;width:5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M507.73 109.1c-2.24-9.03-13.54-12.09-20.12-5.51l-74.36 74.36-67.88-11.31-11.31-67.88 74.36-74.36c6.62-6.62 3.43-17.9-5.66-20.16-47.38-11.74-99.55.91-136.58 37.93-39.64 39.64-50.55 97.1-34.05 147.2L18.74 402.76c-24.99 24.99-24.99 65.51 0 90.5 24.99 24.99 65.51 24.99 90.5 0l213.21-213.21c50.12 16.71 107.47 5.68 147.37-34.22 37.07-37.07 49.7-89.32 37.91-136.73zM64 472c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"/></svg>
+# **Herramienta** para crear el `mapa` 
 
 ---
 ### Uso de leaflet 
 
 &lt;img src="img/Leaflet_logo.png" width="70%" style="display: block; margin: auto;" /&gt;
 
+- Que és Leaflet 
+- Uso básico 
+- Leaflet + R 
+- plugins 
 
 ---
 
@@ -233,9 +241,25 @@ leaflet() %&gt;%
   addMarkers(lng=-3.311572, lat=37.053434, popup="Mulhacen")
 ```
 
-<div id="htmlwidget-b6a3d5f0dba8b2d87eea" style="width:80%;height:70%;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b6a3d5f0dba8b2d87eea">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[37.053434,-3.311572,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Mulhacen",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.053434,37.053434],"lng":[-3.311572,-3.311572]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4e5541562b0b6baec185" style="width:80%;height:70%;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4e5541562b0b6baec185">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[37.053434,-3.311572,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Mulhacen",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.053434,37.053434],"lng":[-3.311572,-3.311572]}},"evals":[],"jsHooks":[]}</script>
 
+---
+### Sobre que base 
+Los servicios WMS
+
+- Qué son? 
+- Tipos? 
+- Fuentes de WMS?
+
+---
+
+Combinación con flexdasboard 
+
+html directo 
+
+
+--- 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
