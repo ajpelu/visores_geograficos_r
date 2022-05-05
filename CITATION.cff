@@ -4,7 +4,7 @@
 cff-version: 1.2.0
 title: >-
   Generación de visores espaciales con R preparado. Seminarios del
-  grupo Ecoinforática de la Asociación Española de Ecología Terrestre
+  grupo Ecoinformática de la Asociación Española de Ecología Terrestre
   AEET.
 message: Please cite this using these metadata.
 type: report
@@ -13,6 +13,9 @@ authors:
     family-names: Pérez-Luque
     email: ajpelu@gmail.com
     orcid: 'https://orcid.org/0000-0002-1747-0469'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.6522401
 url: 'https://ajpelu.github.io/visores_geograficos_r/slides.html'
 repository: 'https://github.com/ajpelu/visores_geograficos_r/'
 license: CC-BY-4.0

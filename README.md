@@ -8,9 +8,8 @@ Este repositorio contiene el material del Seminario ***Generación de visores es
 
 ## <img src='img/youtube.svg' width='30'> Vídeo
 
+This repository is licensed as Creative Commons Attribution 4.0 ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). Mas información [aquí](/LICENSE). Cualquiera puede utilizar el contenido del repositorio citando lo siguiente: 
 
-
-
-
-
+* Pérez-Luque AJ (2022). Generación de visores espaciales con R preparado. Seminarios del grupo Ecoinformática de la Asociación Española de Ecología Terrestre
+  AEET. ![](https://img.shields.io/badge/version-1.0.0-green.svg).   [![DOI](https://zenodo.org/badge/487946164.svg)](https://zenodo.org/badge/latestdoi/487946164)
 
