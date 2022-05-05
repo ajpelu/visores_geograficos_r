@@ -210,41 +210,153 @@ class: middle, center
 # **Herramienta** para crear el `mapa` 
 
 ---
-### Uso de leaflet 
+
+class: middle
+
+```{r, echo=FALSE, out.width='70%', fig.align='center'}
+knitr::include_graphics("img/Leaflet_logo.png")
+```
+<br>
+<br>
+
+- Librería JavaScript de código abierto para generar mapas interactivos 
+
+- Sencilla, simple y ligera 
+
+- Gran cantidad de [**plugins**](https://leafletjs.com/plugins.html) que permiten incorporar nuevas características a los mapas 
+
+  - proyecciones<sup>1</sup>: `epsg:3857`, `epsg:4326`. [Proj4Leaflet](http://kartena.github.io/Proj4Leaflet/)
+
+
+
+
+.footnote[
+[1] [mappingGIS](https://mappinggis.com/2017/02/personalizando-los-sistemas-de-coordenadas-en-leaflet/)
+]
+---
+class: inverse, middle, center
 
 ```{r, echo=FALSE, out.width='70%', fig.align='center'}
 knitr::include_graphics("img/Leaflet_logo.png")
 ```
 
-- Que és Leaflet 
-- Uso básico 
-- Leaflet + R 
-- plugins 
+# +
 
+# `r fa("r-project", height= "4em", fill = "steelblue")`
+
+
+https://rstudio.github.io/leaflet/
 ---
+### Uso básico 
 
-```{r, echo = TRUE, out.width = '80%', out.height='70%', fig.align='center'}
+```{r, echo = TRUE, out.width = '100%', out.height='50%', fig.align='center'}
 library(leaflet)
 
-leaflet() %>% 
-  addTiles() %>% 
+mapita <- leaflet() %>% 
+  # Añadir capas 
+  addTiles() %>% # Open Street map
+  # Añadir otras capas 
   addMarkers(lng=-3.311572, lat=37.053434, popup="Mulhacen")
-  
+
+mapita
+```
+---
+
+### Añadir otras capas 
+
+```{r, echo = TRUE, out.width = '100%', out.height='50%', fig.align='center'}
+mapita %>% 
+  addPolygons(data = sn,
+              group= 'Natural Park',
+              fillOpacity = 0, 
+              color = "blue") 
 ```
 
 ---
-### Sobre que base 
-Los servicios WMS
 
-- Qué son? 
-- Tipos? 
-- Fuentes de WMS?
+### Añadir control de capas 
+
+```{r, echo=FALSE}
+mapita <- mapita %>%   
+  addPolygons(data = sn,
+              group= 'Natural Park',
+              fillOpacity = 0, 
+              color = "blue") 
+```
+
+
+```{r, echo = TRUE, out.width = '100%', out.height='50%', fig.align='center'}
+mapita %>% 
+  addLayersControl(position = 'bottomright',
+                   baseGroups = c('Open Street Map'),
+                   overlayGroups = c('Natural Park')) 
+```
+
+---
+### Capas base
+- Otros [proveedores](https://leaflet-extras.github.io/leaflet-providers/preview/) de mapas base 
+
+ 
+```{r, echo = TRUE, out.width = '100%', out.height='50%', fig.align='center'}
+
+mapita %>% 
+  addProviderTiles("Esri.WorldImagery", 
+                   group = "Satellite (ESRI)") %>% 
+  addLayersControl(position = 'bottomright',
+                   baseGroups = c('Open Street Map', 
+                                  'Satellite (ESRI)'),
+                   overlayGroups = c('Natural Park')) 
+```
+
+---
+### Capas base (WMS)
+
+- **W**eb **M**ap **S**ervices protocolo estándar (Open Geospatial Consortium) que sirve imágenes de mapas a partir de información geográfica. 
+
+- Fuentes de WMS:
+
+  - [IDE España](https://www.idee.es/segun-tipo-de-servicio)
+  - [IGN España](https://www.ign.es/web/ign/portal/ide-area-nodo-ide-ign)
+  - [Biodiversidad y Bosques](https://www.miteco.gob.es/es/cartografia-y-sig/ide/directorio_datos_servicios/biodiversidad/wms_bdn.aspx) (MITECO)
+  - [REDIAM - Andalucía](https://portalrediam.cica.es/geonetwork/static/search?serviceType=OGC:WMS)
+  - Predicciones del tiempo: [OpenWeatherMaps](https://openweathermap.org/api/weather-map-2)
 
 ---
 
-Combinación con flexdasboard 
+#### ¿Qué capa utilizar de un servicio WMS?<sup>1</sup> 
 
-html directo 
+`URL WMS` + petición de metadatos
+```
+http://www.ign.es/wms-inspire/pnoa-ma
+```
 
++
 
---- 
+```
+?=request=GetCapabilities&service=WMS
+```
+
+[Ejemplo](http://www.ign.es/wms-inspire/pnoa-ma?=request=GetCapabilities&service=WMS) 
+
+- Layer: `OI.OrthoimageCoverage` 
+.footnote[
+[1] [Comunicación con un servidor WMS](https://enterprise.arcgis.com/es/server/latest/publish-services/windows/communicating-with-a-wms-service-in-a-web-browser.htm)
+]
+
+---
+
+ 
+```{r, echo = TRUE, out.width = '100%', out.height='50%', fig.align='center'}
+
+mapita %>% 
+  addProviderTiles("Esri.WorldImagery", 
+                   group = "Satellite (ESRI)") %>% 
+  addWMSTiles("http://www.ign.es/wms-inspire/pnoa-ma?", #<<
+    layers = 'OI.OrthoimageCoverage', #<<
+    options = WMSTileOptions(format = "image/png", transparent = TRUE),#<<
+    group = "PNOA") %>% #<<
+  addLayersControl(position = 'bottomright',
+    baseGroups = c('Open Street Map','Satellite (ESRI)','PNOA'), #<<
+    overlayGroups = c('Natural Park')) 
+```
+
