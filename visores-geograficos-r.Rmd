@@ -67,6 +67,14 @@ class: inverse, middle, center
 
 class: middle, center
 
+```{r, echo=FALSE, out.height='80%', fig.align='center'}
+knitr::include_graphics("img/esquema_pub.png")
+```
+
+---
+
+class: middle, center
+
 `r fontawesome::fa("map-pin", height = "5em", fill = "steelblue")`
 # Información Espacial  
 
@@ -393,9 +401,96 @@ mapita_final <-
     overlayGroups = c('Natural Park'))
 ```
 
-```{r, echo = TRUE}
-
+```{r, echo = TRUE, eval=FALSE}
 library(htmlwidgets) # HTML Widgets for R #<<
 saveWidget(mapita_final, "index.html") #<<
 
 ```
+
+---
+
+## Otras opciones 
+### [`flexdashboard`](https://pkgs.rstudio.com/flexdashboard/)
+
+- Crear archivo `index.Rmd` 
+- Escribir tu código con tu mapa
+- Crear carpeta vacía `/docs` 
+- Crear un archivo [YAML](https://yaml.org/) llamado `_site.yml` que contenga el código:
+```
+output_dir: docs
+```
+- Renderizar tu `.Rmd`. Todos los archivos necesarios se generarán en la carpeta `/docs`. 
+
+Ejemplos: 
+- Transectos + parcelas *Q. pyrenaica* Sierra Nevada
+[https://ajpelu.github.io/qpyr_sp_coloniza/](https://ajpelu.github.io/qpyr_sp_coloniza/)
+
+- Visualización cambio climático enebrales de Sierra Nevada [https://ajpelu.github.io/life_enebrando](https://ajpelu.github.io/life_enebrando)
+
+---
+
+## 2. Publicar tu visor 
+
+### a. Alojar el visor en tu web 
+
+  - Alojar tu archivo `index.html` o tu carpeta `/docs` a tu propio servidor (!Ojo con el nombre del archivo index!)
+
+### b. Alojar el visor en Github
+
+  - Desplegar desde tu repositorio.
+  - Introducción a Git + Github + Repositorios 
+    
+    - [¡Se puede entender cómo funcionan Git y GitHub!](https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/2332) Astigarraga & Cruz-Alonso (2022)
+    - [¿Por qué usar GitHub? Diez pasos para disfrutar de GitHub y no morir en el intento](https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/1604) Galeano (2018)
+
+---
+
+### ¿Cómo desplegar el visor usando `r fontawesome::fa("github", height = "1em")`? 
+
+- Ir a **settings** de tu repositorio 
+- Ir a la pestaña **`Pages`**
+- Establecer `Source`: **`main`**
+- Guardar 
+
+El visor se desplegará en 
+```
+usuario.github.io/repositorio
+```
+
+Ejemplo: https://ajpelu.github.io/visores_geograficos_r/ 
+
+Otro ejemplo: https://ajpelu.github.io/qpyr_spatial_es/
+
+---
+class: inverse, middle, center
+
+`r fontawesome::fa("code", height = "3em")`
+# Live demo 
+
+---
+
+### `r fontawesome::fa("github")` [ajpelu/qpyr_spatial_es/](https://github.com/ajpelu/qpyr_spatial_es)
+
+https://ajpelu.github.io/qpyr_spatial_es/ 
+
+### `r fontawesome::fa("github")` [ajpelu/visores_geograficos_r](https://github.com/ajpelu/visores_geograficos_r)
+
+https://ajpelu.github.io/visores_geograficos_r 
+
+---
+
+class: inverse, middle, center
+
+# Muchas gracias 
+
+<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/6410962?v=4" width="150px"/>
+
+## Antonio J. Pérez-Luque 
+
+### Material en `r fontawesome::fa("github")` [ajpelu/visores_geograficos_r](https://github.com/ajpelu/visores_geograficos_r)
+
+.fade[SERPAM<br>EEZ-CSIC]
+
+[`r fontawesome::fa("link")` https://ajperezluque.com/](https://ajperezluque.com/)
+[`r fontawesome::fa("twitter")` @ajpelu](https://twitter.com/ajpelu)
+[`r fontawesome::fa("github")` @ajpelu](https://github.com/ajpelu)
