@@ -360,3 +360,42 @@ mapita %>%
     overlayGroups = c('Natural Park')) 
 ```
 
+---
+
+class: middle, center
+
+`r fontawesome::fa("desktop", height = "5em", fill = "steelblue")`
+# Un **lugar** donde mostrar/alojar el mapa que hemos creado
+
+---
+
+class: middle, center
+
+```{r, echo=FALSE, out.height='80%', fig.align='center'}
+knitr::include_graphics("img/esquema_pub.png")
+```
+
+---
+
+### 1. Generar html 
+
+```{r, echo=TRUE}
+mapita_final <-
+  mapita %>% 
+  addProviderTiles("Esri.WorldImagery", 
+                   group = "Satellite (ESRI)") %>% 
+  addWMSTiles("http://www.ign.es/wms-inspire/pnoa-ma?", 
+    layers = 'OI.OrthoimageCoverage',
+    options = WMSTileOptions(format = "image/png", transparent = TRUE),
+    group = "PNOA") %>% 
+  addLayersControl(position = 'bottomright',
+    baseGroups = c('Open Street Map','Satellite (ESRI)','PNOA'),
+    overlayGroups = c('Natural Park'))
+```
+
+```{r, echo = TRUE}
+
+library(htmlwidgets) # HTML Widgets for R #<<
+saveWidget(mapita_final, "index.html") #<<
+
+```
