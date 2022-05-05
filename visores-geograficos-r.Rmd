@@ -50,6 +50,19 @@ class: inverse, middle, center
 
 ---
 
+class: middle, left
+
+### Slides 
+[https://ajpelu.github.io/visores_geograficos_r/visores-geograficos-r.html](https://ajpelu.github.io/visores_geograficos_r/visores-geograficos-r.html)
+
+### Material en `r fontawesome::fa("github")` [ajpelu/visores_geograficos_r](https://github.com/ajpelu/visores_geograficos_r)
+
+### `r fontawesome::fa("map")` [https://ajpelu.github.io/visores_geograficos_r_ejemplo/](https://ajpelu.github.io/visores_geograficos_r_ejemplo/) 
+
+---
+
+### `r fa("github", fill = "steelblue")` Repo: ajpelu/visores_geograficos_r/
+
 ## ... para este .red[brico-Seminario] vamos a necesitar 
 
 
