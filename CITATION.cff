@@ -1,0 +1,18 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Generación de visores espaciales con R preparado. Seminarios del
+  grupo Ecoinforática de la Asociación Española de Ecología Terrestre
+  AEET.
+message: Please cite this using these metadata.
+type: report
+authors:
+  - given-names: Antonio Jesús
+    family-names: Pérez-Luque
+    email: ajpelu@gmail.com
+    orcid: 'https://orcid.org/0000-0002-1747-0469'
+url: 'https://ajpelu.github.io/visores_geograficos_r/slides.html'
+repository: 'https://github.com/ajpelu/visores_geograficos_r/'
+license: CC-BY-4.0
