@@ -1,5 +1,5 @@
 ---
-title: "Generación de visores de datos espaciales con `r fa("r-project", fill = "steelblue")`"
+title: "Generación de visores de datos espaciales con R"
 subtitle: "Seminarios de Ecoinformática"
 author: "Antonio J. Pérez-Luque"
 institute: ""
@@ -52,16 +52,20 @@ class: inverse, middle, center
 
 class: middle, left
 
-### Slides 
-[https://ajpelu.github.io/visores_geograficos_r/visores-geograficos-r.html](https://ajpelu.github.io/visores_geograficos_r/visores-geograficos-r.html)
 
-### Material en `r fontawesome::fa("github")` [ajpelu/visores_geograficos_r](https://github.com/ajpelu/visores_geograficos_r)
+### `r fontawesome::fa("github")` Repo con material
 
-### `r fontawesome::fa("map")` [https://ajpelu.github.io/visores_geograficos_r_ejemplo/](https://ajpelu.github.io/visores_geograficos_r_ejemplo/) 
+[ajpelu/visores_geograficos_r](https://github.com/ajpelu/visores_geograficos_r)
+
+### `r fontawesome::fa("desktop")` Slides
+
+[https://ajpelu.github.io/visores_geograficos_r/slides.html](https://ajpelu.github.io/visores_geograficos_r/slides.html)
+
+### `r fontawesome::fa("map")` Mapa de ejemplo
+
+[https://ajpelu.github.io/visores_geograficos_r_ejemplo/](https://ajpelu.github.io/visores_geograficos_r_ejemplo/) 
 
 ---
-
-### `r fa("github", fill = "steelblue")` Repo: ajpelu/visores_geograficos_r/
 
 ## ... para este .red[brico-Seminario] vamos a necesitar 
 
@@ -156,10 +160,12 @@ class:center, middle
 
 .pull-left[
 ![](img/orange_lemon.jpeg)
+[Fuente](https://github.com/MicheleTobias/R-Projections-Workshop)
 ] 
 
 .pull-right[
 ![](img/orange_flatten.jpeg)
+[Fuente](http://blogs.lincoln.ac.nz/gis/2017/03/29/where-on-earth-are-we/)
 ] 
 
 
@@ -347,13 +353,14 @@ mapita %>%
 #### ¿Qué capa utilizar de un servicio WMS?<sup>1</sup> 
 
 `URL WMS` + petición de metadatos
-```
+
+```java
 http://www.ign.es/wms-inspire/pnoa-ma
 ```
 
 +
 
-```
+```java
 ?=request=GetCapabilities&service=WMS
 ```
 
@@ -481,14 +488,18 @@ class: inverse, middle, center
 # Live demo 
 
 ---
+class: middle, center
+
+`r fontawesome::fa("code", height = "3em")`
+# Live demo 
 
 ### `r fontawesome::fa("github")` [ajpelu/qpyr_spatial_es/](https://github.com/ajpelu/qpyr_spatial_es)
 
 https://ajpelu.github.io/qpyr_spatial_es/ 
 
-### `r fontawesome::fa("github")` [ajpelu/visores_geograficos_r](https://github.com/ajpelu/visores_geograficos_r)
+### `r fontawesome::fa("github")` [ajpelu/visores_geograficos_r](https://github.com/ajpelu/visores_geograficos_r_ejemplo)
 
-https://ajpelu.github.io/visores_geograficos_r 
+https://ajpelu.github.io/visores_geograficos_r_ejemplo
 
 ---
 
@@ -504,6 +515,6 @@ class: inverse, middle, center
 
 .fade[SERPAM<br>EEZ-CSIC]
 
-[`r fontawesome::fa("link")` https://ajperezluque.com/](https://ajperezluque.com/)
+[`r fontawesome::fa("link")` ajperezluque.com/](https://ajperezluque.com/)
 [`r fontawesome::fa("twitter")` @ajpelu](https://twitter.com/ajpelu)
 [`r fontawesome::fa("github")` @ajpelu](https://github.com/ajpelu)
